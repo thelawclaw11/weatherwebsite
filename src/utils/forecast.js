@@ -1,8 +1,8 @@
-const request = require('request')
+const request = require('request');
 
 const forecast = function (latitude, longitude, callback){
 
-    const url = 'https://api.darksky.net/forecast/78f768c0c2be2e0e6201d79adf0c3cb8/' + latitude + ',' + longitude
+    const url = 'https://api.darksky.net/forecast/78f768c0c2be2e0e6201d79adf0c3cb8/' + latitude + ',' + longitude;
     request({ url, json: true }, (error, { body }) =>{
         if (error){
             callback('unable to access weather services')
@@ -14,6 +14,6 @@ const forecast = function (latitude, longitude, callback){
             )
         }
     })
-}
+};
 
-module.exports = forecast
+module.exports = forecast;

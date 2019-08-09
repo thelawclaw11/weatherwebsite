@@ -1,25 +1,25 @@
-const path = require('path')
-const express = require('express')
-const hbs = require('hbs')
-const geocode = require('./utils/geocode')
-const forecast = require('./utils/forecast')
+const path = require('path');
+const express = require('express');
+const hbs = require('hbs');
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
 
 
-const app = express()
+const app = express();
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 //Define paths for express config
-const publicDirectorypath = path.join(__dirname, '../public')
-const viewsPath = path.join(__dirname, '../templates/views')
-const partialsPath = path.join(__dirname, '../templates/partials')
+const publicDirectorypath = path.join(__dirname, '../public');
+const viewsPath = path.join(__dirname, '../templates/views');
+const partialsPath = path.join(__dirname, '../templates/partials');
 
 //Setup handlebars engine and views location
-app.set('view engine', 'hbs')
-app.set('views', viewsPath)
-hbs.registerPartials(partialsPath)
+app.set('view engine', 'hbs');
+app.set('views', viewsPath);
+hbs.registerPartials(partialsPath);
 
 //setup static directory to serve
-app.use(express.static(publicDirectorypath))
+app.use(express.static(publicDirectorypath));
 
 
 app.get('', (req, res) =>{
@@ -27,20 +27,20 @@ app.get('', (req, res) =>{
         title: 'Weather',
         name: 'Canon'
     })
-})
+});
 app.get('/about', (req, res) =>{
     res.render('about', {
         title: 'About me',
         name: 'Canon'
     })
-})
+});
 
 app.get('/help', (req, res) =>{
     res.render('help', {
         title: 'Help',
         name: 'Canon'
     })
-})
+});
 
 
 
@@ -71,7 +71,7 @@ app.get('/weather', (req, res) =>{
         })
 
     })
-})
+});
 
 
 
@@ -83,7 +83,7 @@ app.get('/help/*', (req, res) =>{
         error: 'Help article not found'
 
     })
-})
+});
 
 app.get('*', (req, res)=>{
     res.render('404', {
@@ -93,10 +93,10 @@ app.get('*', (req, res)=>{
 
     })
 
-})
+});
 
 
 
 app.listen(port, () =>{
     console.log('Server is up on port ' + port)
-})
+});
