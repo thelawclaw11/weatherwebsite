@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
-const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+const geocode =require ("./utils/geocode");
 
 
 const app = express();
@@ -75,7 +75,7 @@ app.get('/weather', (req, res) =>{
 
 
 
-
+/*
 app.get('/help/*', (req, res) =>{
     res.render('404', {
         title: '404',
@@ -84,7 +84,8 @@ app.get('/help/*', (req, res) =>{
 
     })
 });
-
+*/
+/*
 app.get('*', (req, res)=>{
     res.render('404', {
         title: '404',
@@ -94,7 +95,7 @@ app.get('*', (req, res)=>{
     })
 
 });
-
+*/
 
 
 app.listen(port, () =>{
