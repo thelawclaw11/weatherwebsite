@@ -70,7 +70,7 @@ app.get('/weather', (req, res) => {
 
 
 
-/*app.get('/help/!*', (req, res) => {
+app.get('/help/!*', (req, res) => {
     res.render('404', {
         title: '404',
         name: 'Andrew Mead',
@@ -84,7 +84,7 @@ app.get('*', (req, res) => {
         name: 'Andrew Mead',
         errorMessage: 'Page not found.'
     })
-})*/
+})
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
